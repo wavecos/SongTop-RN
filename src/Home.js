@@ -4,6 +4,7 @@ import {
   View,
   ScrollView,
   TextInput,
+  Button,
   ActivityIndicator
 } from 'react-native';
 import {List, ListItem} from 'react-native-elements';
@@ -16,7 +17,7 @@ export default class Home extends Component<Props> {
     super(props);
     this.state = {
       isLoading: true,
-      search: "hola",
+      search: "",
       dataSource: []
     }
   }
@@ -54,9 +55,14 @@ export default class Home extends Component<Props> {
 
     return (
       <View style={styles.container}>
-        <TextInput
-          style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-        />
+        <View style={styles.searchContainer}>
+          <TextInput
+            style={{width: 340, height: 40}}
+            onChangeText={(text) => this.setState({text})}
+            value={this.state.search}
+          />
+          <Button style={{width: 60}} title="Search" />
+        </View>
         <ScrollView>
           <List>
             {this.state.dataSource.map((song) => (
@@ -80,5 +86,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column'
+  },
+  searchContainer: {
+    flexDirection: 'row'
   }
 });
