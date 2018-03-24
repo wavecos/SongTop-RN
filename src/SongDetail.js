@@ -46,7 +46,7 @@ export default class SongDetail extends Component<Props> {
             raised
             name='play'
             type='font-awesome'
-            color='#f50'
+            color='#5BC546'
             onPress={() => this.playTrack()} />
         </Card>
       </View>
