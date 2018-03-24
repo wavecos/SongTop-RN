@@ -36,7 +36,6 @@ export default class SongDetail extends Component<Props> {
   render() {
     return (
       <View>
-
         <Card
           title={this.state.song.artistName}
           image={{uri: this.state.song.artworkUrl100}} >
