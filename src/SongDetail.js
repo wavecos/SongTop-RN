@@ -44,7 +44,7 @@ export default class SongDetail extends Component<Props> {
           </Text>
           <Icon
             raised
-            name='play'
+            name='play-circle'
             type='font-awesome'
             color='#5BC546'
             onPress={() => this.playTrack()} />
